@@ -21,11 +21,5 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          script: |
-              cd book-my-show
-              git pull origin main
-              pnpm install
-              pnpm run build
-              pm2 restart fe-server
-              pm2 restart http-server
-              pm2 restart ws-server
+          script: node -v && npm -v
+
